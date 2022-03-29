@@ -30,7 +30,10 @@ function App() {
     if(typeof window.ethereum !== 'undefined') {
       let accounts = await window.ethereum.request({ method: 'eth_requestAccounts'});
       setAccounts(accounts);
-      console.log(accounts);
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+      const balance = await provider.getBalance(accounts[0])
+      const balanceInETH = ethers.utils.formatEther(balance)
+      setBalance(balanceInETH)
     }
   }
 
@@ -41,7 +44,10 @@ function App() {
       {loader ? <p>Loading...</p> : 
       !loader &&
         accounts.length > 0 ?
-        <p>You are connected with {accounts[0]}</p>
+        <div>
+          <p>You are connected with {accounts[0]}</p>
+          <p>You have {balance} ETH</p>
+        </div>
         :
         <p onClick={() => getAccounts()}>Log in with metamask</p>
       
