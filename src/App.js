@@ -11,7 +11,6 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    getAccounts();
     setLoader(false);
   }, [])
 
@@ -31,7 +30,7 @@ function App() {
         accounts.length > 0 ?
         <p>You are connected with {accounts[0]}</p>
         :
-        <p>You are not connected</p>
+        <button onClick={() => getAccounts()}>Log in with metamask</button>
       }
     </div>
   );
