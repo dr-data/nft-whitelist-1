@@ -17,9 +17,6 @@ function App() {
 
   window.ethereum.on('chainChanged', () => {
     window.location.reload()
-    setTimeout(() => {
-      getAccounts()
-    }, 2000)
   })
 
   window.ethereum.on('disconnect', () => {
