@@ -1,36 +1,42 @@
 .App {
+  font-family: 'Poppins';
+  font-weight: 400;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 900px;
   flex-direction: column;
+  color: white;
 }
+
+body{
+  background-color: #33285F;
+}
+
+.hero{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 p{
   font-size: 1.3rem;
 }
 .connect{
-  margin: 1rem;
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 1px;
+  margin-top: -5rem;
+  color: white;
+  font-size: 24px;
+  font-weight: 800;
+  font-style: bold;
+  letter-spacing: -0.4px;
   padding: 13px 50px 13px;
   outline: 0;
-  border: 1px solid black;
+  border: 1px solid #FFB3B3;
+  border-radius: 14px;
   cursor: pointer;
   position: relative;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.disconnect{
-  margin: 1rem;
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 50px 13px;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: #FFB3B3;
 }

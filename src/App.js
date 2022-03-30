@@ -22,10 +22,6 @@ function App() {
     window.location.reload()
   })
 
-  // window.ethereum.on('accountsChanged', () => {
-  //   window.location.reload()
-  // })
-
   async function getAccounts() {
     if(typeof window.ethereum !== 'undefined') {
       let accounts = await window.ethereum.request({ method: 'eth_requestAccounts'});
@@ -47,9 +43,12 @@ function App() {
           <p>You have {balance} ETH on your account.</p>
         </div>
         :
-        <button className='connect' onClick={() => getAccounts()}>Log in with Metamask</button>
+        <div className='hero'>
+          <img src='./banner.png'/>
+          <button className='connect' onClick={() => getAccounts()}>Log in with Metamask</button>
+        </div>
+        
       }
-      {!accounts[0] && <p>If the page does not reload itself, you can do it manually.</p>}
     </div>
   );
 }
