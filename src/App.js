@@ -14,11 +14,11 @@ function App() {
     setLoader(false);
   }, [])
 
-  window.ethereum.on('chainChanged', () => {
+  window.ethereum.on('disconnect', () => {
     window.location.reload()
   })
 
-  window.ethereum.on('disconnect', () => {
+  window.ethereum.on('chainChanged', () => {
     window.location.reload()
   })
 
