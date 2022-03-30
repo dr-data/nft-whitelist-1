@@ -35,7 +35,6 @@ function App() {
 
   return (
     <div className="App">
-      {loader && <p>Loading...</p>}
       {!loader &&
         accounts.length > 0 ?
         <div>
