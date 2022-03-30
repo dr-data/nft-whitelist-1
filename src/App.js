@@ -11,7 +11,6 @@ function App() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    getAccounts()
     setLoader(false);
   }, [])
 
@@ -22,10 +21,10 @@ function App() {
   window.ethereum.on('disconnect', () => {
     window.location.reload()
   })
-  
-  window.ethereum.on('accountsChanged', () => {
-    window.location.reload()
-  })
+
+  // window.ethereum.on('accountsChanged', () => {
+  //   window.location.reload()
+  // })
 
   async function getAccounts() {
     if(typeof window.ethereum !== 'undefined') {
@@ -40,15 +39,15 @@ function App() {
 
   return (
     <div className="App">
-      {loader ? <p>Loading...</p> : 
-      !loader &&
+      {loader && <p>Loading...</p>}
+      {!loader &&
         accounts.length > 0 ?
         <div>
           <p>You are connected with this adress : {accounts[0]}</p>
-          {balance > 0.03 ? <p>Balance : {balance} ETH</p> : <p>You dont have enough ETH.</p>}
+          <p>You have {balance} ETH on your account.</p>
         </div>
         :
-        <button className='connect' onClick={() => getAccounts()}>Log in with metamask</button>
+        <button className='connect' onClick={() => getAccounts()}>Log in with Metamask</button>
       }
       {!accounts[0] && <p>If the page does not reload itself, you can do it manually.</p>}
     </div>
