@@ -37,7 +37,7 @@ function App() {
     <div className="App">
       {!loader &&
         accounts.length > 0 ?
-        <div>
+        <div className='login'>
           <p>You are connected with this adress : {accounts[0]}</p>
           <p>You have {balance} ETH on your account.</p>
         </div>

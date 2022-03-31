@@ -1,12 +1,6 @@
 .App {
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 900px;
-  flex-direction: column;
   color: white;
 }
 
@@ -20,20 +14,29 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 860px;
 }
 
 p{
   font-size: 1.3rem;
 }
+
+.login{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 860px;
+}
+
 .connect{
   margin-top: -5rem;
   color: white;
   font-size: 24px;
   font-weight: 800;
-  font-style: bold;
-  letter-spacing: -0.4px;
+  font-style: italic;
   padding: 13px 50px 13px;
-  outline: 0;
   border: 1px solid #FFB3B3;
   border-radius: 14px;
   cursor: pointer;
